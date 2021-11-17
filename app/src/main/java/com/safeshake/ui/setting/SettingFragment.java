@@ -26,7 +26,7 @@ public class SettingFragment extends Fragment {
         binding = FragmentSettingBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSetting;
+        final TextView textView = binding.settingText;
         settingViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
