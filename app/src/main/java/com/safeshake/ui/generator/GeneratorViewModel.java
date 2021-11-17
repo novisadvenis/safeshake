@@ -10,7 +10,7 @@ public class GeneratorViewModel extends ViewModel {
 
     public GeneratorViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        //mText.setValue("This is dashboard fragment");
     }
 
     public LiveData<String> getText() {
