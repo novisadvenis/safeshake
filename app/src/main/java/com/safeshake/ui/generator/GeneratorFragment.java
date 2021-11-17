@@ -1,4 +1,4 @@
-package com.safeshake.ui.dashboard;
+package com.safeshake.ui.generator;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,24 +11,23 @@ import android.support.v4.app.Fragment;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
 
-import com.safeshake.R;
-import com.safeshake.databinding.FragmentDashboardBinding;
+import com.safeshake.databinding.FragmentGeneratorBinding;
 
-public class DashboardFragment extends Fragment {
+public class GeneratorFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
-    private FragmentDashboardBinding binding;
+    private GeneratorViewModel generatorViewModel;
+    private FragmentGeneratorBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(DashboardViewModel.class);
+        generatorViewModel =
+                new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(GeneratorViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentGeneratorBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textGenerator;
+        generatorViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

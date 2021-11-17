@@ -1,4 +1,4 @@
-package com.safeshake.ui.notifications;
+package com.safeshake.ui.vault;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,24 +11,23 @@ import android.support.v4.app.Fragment;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
 
-import com.safeshake.R;
-import com.safeshake.databinding.FragmentNotificationsBinding;
+import com.safeshake.databinding.FragmentVaultBinding;
 
-public class NotificationsFragment extends Fragment {
+public class VaultFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
-    private FragmentNotificationsBinding binding;
+    private VaultViewModel vaultViewModel;
+    private FragmentVaultBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(NotificationsViewModel.class);
+        vaultViewModel =
+                new ViewModelProvider(this, new ViewModelProvider.NewInstanceFactory()).get(VaultViewModel.class);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentVaultBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textVault;
+        vaultViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
