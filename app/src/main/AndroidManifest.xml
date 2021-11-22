@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Safeshake3">
         <activity
+            android:name=".activity.EditPassword"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AddPassword"
+            android:exported="false" />
+        <activity
             android:name=".activity.PasswordActivity"
             android:exported="false" />
         <activity

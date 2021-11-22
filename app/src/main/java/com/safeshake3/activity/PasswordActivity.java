@@ -30,6 +30,7 @@ public class PasswordActivity extends AppCompatActivity {
         username = (TextView) findViewById(R.id.passwordDetails_username_value);
         password = (TextView) findViewById(R.id.passwordDetails_password_value);
         cancel = (Button) findViewById(R.id.passwordDetails_cancelBtn);
+        edit = (Button) findViewById(R.id.passwordDetails_editBtn);
 
 
         website.setText(websiteValue);
@@ -39,14 +40,26 @@ public class PasswordActivity extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToValut();
+                goToVault();
+            }
+        });
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToEditPassword();
             }
         });
     }
 
 
-    private void goToValut() {
+    private void goToVault() {
         Intent intent = new Intent(this, Vault.class);
+        startActivity(intent);
+    }
+
+    private void goToEditPassword() {
+        Intent intent = new Intent(this, EditPassword.class);
         startActivity(intent);
     }
 

@@ -28,6 +28,7 @@ public class Vault extends ParentActivity {
     ListView listView;
     List<Password> list;
     List<String> websiteList;
+    Button addPassword;
 
 
     @Override
@@ -45,6 +46,7 @@ public class Vault extends ParentActivity {
         super.onCreate(savedInstanceState);
         searchView = (SearchView) findViewById(R.id.searchView);
         listView = (ListView) findViewById(R.id.lv1);
+        addPassword = (Button) findViewById(R.id.vault_add);
 
         SugarContext.init(this);
         Password.init();
@@ -54,6 +56,13 @@ public class Vault extends ParentActivity {
 
         websiteList = list.stream().map(Password::getWebsite).collect(Collectors.toList());
 
+        addPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToAddPassword();
+            }
+        });
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, websiteList);
         listView.setAdapter(adapter);
@@ -62,13 +71,6 @@ public class Vault extends ParentActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Password selectedPassword = list.get(position);
                 Log.d("Password Selected",selectedPassword.toString());
-                /*TextView website = (TextView) findViewById(R.id.passwordDetails_website_value);
-                TextView username = (TextView) findViewById(R.id.passwordDetails_username_value);
-                TextView password = (TextView) findViewById(R.id.passwordDetails_password_value);
-                Button cancelButton = (Button) findViewById(R.id.passwordDetails_cancelBtn);
-                website.setText(selectedPassword.getWebsite());
-                username.setText(selectedPassword.getUsername());
-                password.setText(selectedPassword.getPassword());*/
 
                 Intent intent = new Intent(Vault.this, PasswordActivity.class);
                 intent.putExtra("website",selectedPassword.getWebsite());
@@ -96,8 +98,11 @@ public class Vault extends ParentActivity {
                 return false;
             }
         });
+    }
 
-
+    private void goToAddPassword() {
+        Intent intent = new Intent(this,AddPassword.class);
+        startActivity(intent);
     }
 
 }
