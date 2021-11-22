@@ -11,13 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Safeshake3">
         <activity
+            android:name=".activity.PasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.Setting"
             android:exported="false" />
         <activity
             android:name=".activity.Generator"
             android:exported="false" />
-        <activity android:name=".activity.Vault"
-            android:exported="false"/>
+        <activity
+            android:name=".activity.Vault"
+            android:exported="false" />
         <activity
             android:name=".activity.Login"
             android:exported="true">

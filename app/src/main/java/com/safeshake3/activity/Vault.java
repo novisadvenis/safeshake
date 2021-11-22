@@ -1,23 +1,23 @@
 package com.safeshake3.activity;
 
-import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 import com.orm.SugarContext;
 import com.safeshake3.R;
-import com.safeshake3.fragment.PasswordDetails;
 import com.safeshake3.model.Password;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -60,10 +60,23 @@ public class Vault extends ParentActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                getSupportFragmentManager().beginTransaction()
-                        .setReorderingAllowed(true)
-                        .add(R.id.fragment_passwordDetails_container_view,PasswordDetails.newInstance("hello","world"),null)
-                        .commit();
+                Password selectedPassword = list.get(position);
+                Log.d("Password Selected",selectedPassword.toString());
+                /*TextView website = (TextView) findViewById(R.id.passwordDetails_website_value);
+                TextView username = (TextView) findViewById(R.id.passwordDetails_username_value);
+                TextView password = (TextView) findViewById(R.id.passwordDetails_password_value);
+                Button cancelButton = (Button) findViewById(R.id.passwordDetails_cancelBtn);
+                website.setText(selectedPassword.getWebsite());
+                username.setText(selectedPassword.getUsername());
+                password.setText(selectedPassword.getPassword());*/
+
+                Intent intent = new Intent(Vault.this, PasswordActivity.class);
+                intent.putExtra("website",selectedPassword.getWebsite());
+                intent.putExtra("username",selectedPassword.getUsername());
+                intent.putExtra("password",selectedPassword.getPassword());
+
+                startActivity(intent);
+
             }
         });
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
