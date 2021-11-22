@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/vault"
+        android:title="Vault"
+        android:icon="@drawable/vault" />
+    <item
+        android:id="@+id/generator"
+        android:title="Generator"
+        android:icon="@drawable/generator" />
+    <item
+        android:id="@+id/setting"
+        android:title="Setting"
+        android:icon="@drawable/setting" />
+</menu>
