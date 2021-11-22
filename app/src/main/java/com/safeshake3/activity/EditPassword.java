@@ -48,10 +48,13 @@ public class EditPassword extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //todo input check
-                selectedPasswordObject.setWebsite(website.getText().toString());
-                selectedPasswordObject.setUsername(username.getText().toString());
-                selectedPasswordObject.setPassword(password.getText().toString());
-                Password.update(selectedPasswordObject);
+                long id = selectedPasswordObject.getId();
+
+                Password editedPassword = Password.findById(Password.class,id);
+                editedPassword.setWebsite(website.getText().toString());
+                editedPassword.setUsername(username.getText().toString());
+                editedPassword.setPassword(password.getText().toString());
+                editedPassword.save();
 
                 goToVault();
             }

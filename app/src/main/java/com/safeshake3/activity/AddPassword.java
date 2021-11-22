@@ -41,7 +41,7 @@ public class AddPassword extends AppCompatActivity {
                 String newUsernameString = username.getText().toString();
                 String newPasswordString = password.getText().toString();
                 Password newPassword = new Password(newWebsiteString,newUsernameString,newPasswordString);
-                newPassword.save();
+                Password.save(newPassword);
                 //todo input check
                 goToVault();
 

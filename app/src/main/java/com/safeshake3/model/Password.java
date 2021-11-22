@@ -1,13 +1,12 @@
 package com.safeshake3.model;
 
-import androidx.annotation.Nullable;
-
 import com.orm.SugarRecord;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 public class Password extends SugarRecord implements Serializable {
+    private Long id;
     private String website;
     private String username;
     private String password;
@@ -68,12 +67,36 @@ public class Password extends SugarRecord implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Password password1 = (Password) o;
-        return website.equals(password1.website) && username.equals(password1.username) && password.equals(password1.password);
+
+        if (!Objects.equals(website, password1.website))
+            return false;
+        if (!Objects.equals(username, password1.username))
+            return false;
+        return Objects.equals(password, password1.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(website, username, password);
+        int result = website != null ? website.hashCode() : 0;
+        result = 31 * result + (username != null ? username.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public long save() {
+        this.id =  super.save();
+        return this.id;
+    }
+
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
