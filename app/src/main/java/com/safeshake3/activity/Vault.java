@@ -1,6 +1,5 @@
 package com.safeshake3.activity;
 
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,7 +16,6 @@ import com.safeshake3.R;
 import com.safeshake3.fragment.PasswordDetails;
 import com.safeshake3.model.Password;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
