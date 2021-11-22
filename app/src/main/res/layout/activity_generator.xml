@@ -39,7 +39,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/editTextTextPassword"
+                    android:id="@+id/generator_password_value"
                     android:layout_width="286dp"
                     android:layout_height="48dp"
                     android:ems="10"

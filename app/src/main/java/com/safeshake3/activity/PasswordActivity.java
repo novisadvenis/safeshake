@@ -9,12 +9,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.safeshake3.R;
+import com.safeshake3.model.Password;
 
 public class PasswordActivity extends AppCompatActivity {
-    TextView website;
-    TextView username;
-    TextView password;
-    Button cancel,edit;
+    private TextView website, username, password;
+    private Button cancelBtn, editBtn;
+    private Password selectedPasswordObject;
 
 
     @Override
@@ -22,32 +22,35 @@ public class PasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password);
         Intent intent = getIntent();
-        String websiteValue = intent.getStringExtra("website");
-        String usernameValue = intent.getStringExtra("website");
-        String passwordValue = intent.getStringExtra("website");
+        selectedPasswordObject = (Password) intent.getSerializableExtra("selectedPasswordObject");
+        String websiteValue = selectedPasswordObject.getWebsite();
+        String usernameValue = selectedPasswordObject.getUsername();
+        String passwordValue = selectedPasswordObject.getPassword();
 
         website = (TextView) findViewById(R.id.passwordDetails_website_value);
         username = (TextView) findViewById(R.id.passwordDetails_username_value);
         password = (TextView) findViewById(R.id.passwordDetails_password_value);
-        cancel = (Button) findViewById(R.id.passwordDetails_cancelBtn);
-        edit = (Button) findViewById(R.id.passwordDetails_editBtn);
+        cancelBtn = (Button) findViewById(R.id.passwordDetails_cancelBtn);
+        editBtn = (Button) findViewById(R.id.passwordDetails_editBtn);
 
 
         website.setText(websiteValue);
         username.setText(usernameValue);
         password.setText(passwordValue);
 
-        cancel.setOnClickListener(new View.OnClickListener() {
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToVault();
             }
         });
 
-        edit.setOnClickListener(new View.OnClickListener() {
+        editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToEditPassword();
+                Intent intent1 = new Intent(PasswordActivity.this, EditPassword.class);
+                intent1.putExtra("selectedPasswordObject",selectedPasswordObject);
+                startActivity(intent1);
             }
         });
     }

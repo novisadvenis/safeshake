@@ -1,8 +1,13 @@
 package com.safeshake3.model;
 
+import androidx.annotation.Nullable;
+
 import com.orm.SugarRecord;
 
-public class Password extends SugarRecord {
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Password extends SugarRecord implements Serializable {
     private String website;
     private String username;
     private String password;
@@ -57,5 +62,18 @@ public class Password extends SugarRecord {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Password password1 = (Password) o;
+        return website.equals(password1.website) && username.equals(password1.username) && password.equals(password1.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(website, username, password);
     }
 }

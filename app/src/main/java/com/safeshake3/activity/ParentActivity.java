@@ -50,6 +50,4 @@ public abstract class ParentActivity  extends AppCompatActivity {
             }
         });
     }
-
-
 }

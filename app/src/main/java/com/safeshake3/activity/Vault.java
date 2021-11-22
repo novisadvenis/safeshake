@@ -49,7 +49,7 @@ public class Vault extends ParentActivity {
         addPassword = (Button) findViewById(R.id.vault_add);
 
         SugarContext.init(this);
-        Password.init();
+        //Password.init();
 
         list = Password.listAll(Password.class);
         Log.d("INIT Password", list.toString());
@@ -73,9 +73,10 @@ public class Vault extends ParentActivity {
                 Log.d("Password Selected",selectedPassword.toString());
 
                 Intent intent = new Intent(Vault.this, PasswordActivity.class);
-                intent.putExtra("website",selectedPassword.getWebsite());
+               /* intent.putExtra("website",selectedPassword.getWebsite());
                 intent.putExtra("username",selectedPassword.getUsername());
-                intent.putExtra("password",selectedPassword.getPassword());
+                intent.putExtra("password",selectedPassword.getPassword());*/
+                intent.putExtra("selectedPasswordObject", selectedPassword);
 
                 startActivity(intent);
 

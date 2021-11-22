@@ -2,7 +2,9 @@ package com.safeshake3.model;
 
 import com.orm.SugarRecord;
 
-public class AppPassword extends SugarRecord {
+import java.io.Serializable;
+
+public class AppPassword extends SugarRecord implements Serializable {
     private String password;
 
 

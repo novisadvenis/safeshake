@@ -3,25 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
-        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2703125" />
-        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
-        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2703125" />
-        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/fragment_dashboard.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/fragment_home.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/fragment_notifications.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/vkaus/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_add_password.xml" value="0.28804347826086957" />
-        <entry key="..\:/Users/vkaus/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_edit_password.xml" value="0.17760416666666667" />
-        <entry key="..\:/Users/vkaus/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_generator.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/vkaus/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_main.xml" value="0.29393115942028986" />
-        <entry key="..\:/Users/vkaus/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_password.xml" value="0.28804347826086957" />
-        <entry key="..\:/Users/vkaus/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_setting.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/vkaus/AndroidStudioProjects/safeshake/app/src/main/res/layout/fragment_generator.xml" value="0.25" />
-        <entry key="..\:/Users/vkaus/AndroidStudioProjects/safeshake/app/src/main/res/layout/fragment_setting.xml" value="0.25" />
-        <entry key="..\:/Users/vkaus/AndroidStudioProjects/safeshake/app/src/main/res/layout/fragment_vault.xml" value="0.15830800405268491" />
-        <entry key="..\:/Users/vkaus/AndroidStudioProjects/safeshake/app/src/main/res/layout/login2.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/drawable/password_eye.xml" value="0.1390625" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/drawable/setting.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_add_password.xml" value="0.35023584905660377" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_edit_password.xml" value="0.4" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_generator.xml" value="0.264" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_password.xml" value="0.4" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_setting.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/activity_vault.xml" value="0.4" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/login.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/login2.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake/app/src/main/res/layout/password_details.xml" value="0.4" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/drawable/plus.xml" value="0.2703125" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/drawable/selector.xml" value="0.16296296296296298" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/drawable/vault.xml" value="0.26615384615384613" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/layout/activity_generator.xml" value="0.264" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/layout/activity_setting.xml" value="0.264" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/layout/activity_vault.xml" value="0.264" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/layout/fragment_password_details.xml" value="0.264" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/layout/login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/layout/login2.xml" value="0.264" />
+        <entry key="..\:/Users/tenGy/AndroidStudioProjects/safeshake3/app/src/main/res/menu/menu_navigation.xml" value="0.1" />
       </map>
     </option>
   </component>
