@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -46,7 +45,7 @@ public class Vault extends ParentActivity {
         super.onCreate(savedInstanceState);
         searchView = (SearchView) findViewById(R.id.searchView);
         listView = (ListView) findViewById(R.id.lv1);
-        addPassword = (Button) findViewById(R.id.vault_add);
+        addPassword = (Button) findViewById(R.id.settingAddBtn);
 
         SugarContext.init(this);
         //Password.init();
