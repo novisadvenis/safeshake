@@ -105,10 +105,12 @@
                 android:id="@+id/generator_number_switch"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:checked="true"
                 android:paddingLeft="10dp"
                 android:text="Use numbers"
-                android:checked="true"
-                android:textAlignment="textStart" />
+                android:textAlignment="textStart"
+                android:thumbTint="#0076FF"
+                android:trackTint="#0076FF" />
 
             <Switch
                 android:id="@+id/generator_uppercase_switch"
@@ -118,7 +120,9 @@
                 android:text="Use uppercase"
                 android:checked="true"
                 android:textAlignment="textStart"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:thumbTint="#0076FF"
+                android:trackTint="#0076FF" />
 
             <Switch
                 android:id="@+id/generator_lowercase_switch"
@@ -127,7 +131,9 @@
                 android:paddingLeft="10dp"
                 android:text="Use lowercase"
                 android:checked="true"
-                android:textAlignment="textStart" />
+                android:textAlignment="textStart"
+                android:thumbTint="#0076FF"
+                android:trackTint="#0076FF" />
 
             <Switch
                 android:id="@+id/generator_special_switch"
@@ -136,7 +142,9 @@
                 android:paddingLeft="10dp"
                 android:checked="true"
                 android:text="Use special character"
-                android:textAlignment="textStart" />
+                android:textAlignment="textStart"
+                android:thumbTint="#0076FF"
+                android:trackTint="#0076FF" />
 
         </LinearLayout>
 
