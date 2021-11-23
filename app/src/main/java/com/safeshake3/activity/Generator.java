@@ -57,8 +57,15 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
             @Override
             public void onClick(View v) {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                //ClipData clip = ClipData.newPlainText(label, text);
-                //clipboard.setPrimaryClip(clip);
+                ClipData clip = ClipData.newPlainText("Password", passwordField.getText().toString());
+                clipboard.setPrimaryClip(clip);
+
+
+                ClipData pData = clipboard.getPrimaryClip();
+                ClipData.Item item = pData.getItemAt(0);
+                String txtpaste = item.getText().toString();
+                Log.d("PASTE",txtpaste);
+
             }
         });
 

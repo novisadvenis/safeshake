@@ -72,9 +72,6 @@ public class Vault extends ParentActivity {
                 Log.d("Password Selected",selectedPassword.toString());
 
                 Intent intent = new Intent(Vault.this, PasswordActivity.class);
-               /* intent.putExtra("website",selectedPassword.getWebsite());
-                intent.putExtra("username",selectedPassword.getUsername());
-                intent.putExtra("password",selectedPassword.getPassword());*/
                 intent.putExtra("selectedPasswordObject", selectedPassword);
 
                 startActivity(intent);
@@ -86,8 +83,7 @@ public class Vault extends ParentActivity {
             public boolean onQueryTextSubmit(String query) {
                 if (list.contains(query)) {
                     adapter.getFilter().filter(query);
-                } else {
-                    Toast.makeText(Vault.this, "No Match found", Toast.LENGTH_LONG).show();
+                    return true;
                 }
                 return false;
             }
