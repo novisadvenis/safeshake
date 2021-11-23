@@ -19,7 +19,7 @@ public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedIngit statstanceState);
+        super.onCreate(savedInstanceState);
         SugarContext.init(this);
 
 
