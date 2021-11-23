@@ -25,8 +25,7 @@
             android:text="SafeShake"
             android:textAlignment="center"
             android:textColor="#0076FF"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="24sp" />
 
         <Space
             android:layout_width="match_parent"
