@@ -87,15 +87,27 @@
             <SeekBar
                 android:id="@+id/seekBar"
                 android:layout_width="match_parent"
-                android:layout_height="22dp" />
+                android:layout_height="22dp"
+                android:backgroundTint="#0076FF"
+                android:foregroundTint="#0076FF"
+                android:indeterminate="false"
+                android:indeterminateTint="#0076FF"
+                android:progressBackgroundTint="#0076FF"
+                android:progressTint="#0076FF"
+                android:secondaryProgressTint="#0076FF"
+                android:thumbTint="#0076FF"
+                android:tickMarkTint="#0076FF" />
 
             <Switch
                 android:id="@+id/switch5"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
+                android:shadowColor="#0076FF"
                 android:text="Use numbers"
-                android:textAlignment="textStart" />
+                android:textAlignment="textStart"
+                android:textColorHighlight="#0076FF"
+                android:textColorLink="#0076FF" />
 
             <Switch
                 android:id="@+id/switch1"
@@ -104,6 +116,8 @@
                 android:paddingLeft="10dp"
                 android:text="Use Capital"
                 android:textAlignment="textStart"
+                android:textColorHighlight="#0076FF"
+                android:textColorLink="#0076FF"
                 android:textSize="14sp" />
 
             <Switch
@@ -112,7 +126,9 @@
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
                 android:text="Use Letters"
-                android:textAlignment="textStart" />
+                android:textAlignment="textStart"
+                android:textColorHighlight="#0076FF"
+                android:textColorLink="#0076FF" />
 
             <Switch
                 android:id="@+id/switch3"
@@ -120,7 +136,9 @@
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
                 android:text="Use special character"
-                android:textAlignment="textStart" />
+                android:textAlignment="textStart"
+                android:textColorHighlight="#0076FF"
+                android:textColorLink="#0076FF" />
 
         </LinearLayout>
 
