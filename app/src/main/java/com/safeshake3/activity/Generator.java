@@ -1,10 +1,14 @@
 package com.safeshake3.activity;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -25,6 +29,7 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
     final int MENU_ID = R.id.generator;
     final int LAYOUT_ID = R.layout.activity_generator;
     private Switch uppercaseSwitch, lowercaseSwitch, numberSwitch, specialSwitch;
+    private Button copyBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,12 +45,22 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
         specialSwitch = (Switch) findViewById(R.id.generator_special_switch);
         seekBarValue = (TextView) findViewById(R.id.seekValue);
         passwordField = (TextView) findViewById(R.id.generator_password_value);
+        copyBtn = (Button) findViewById(R.id.generator_copyBtn);
 
         uppercaseSwitch.setOnCheckedChangeListener(new onCheckedListener());
         lowercaseSwitch.setOnCheckedChangeListener(new onCheckedListener());
         numberSwitch.setOnCheckedChangeListener(new onCheckedListener());
         specialSwitch.setOnCheckedChangeListener(new onCheckedListener());
 
+
+        copyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                //ClipData clip = ClipData.newPlainText(label, text);
+                //clipboard.setPrimaryClip(clip);
+            }
+        });
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
