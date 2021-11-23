@@ -24,39 +24,60 @@
             android:textSize="24sp"
             tools:paddingBottom="10dp" />
 
-        <EditText
-            android:id="@+id/setting_oldPassword"
-            android:layout_width="371dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:ems="10"
-            android:hint="Old Password"
-            android:inputType="textPassword"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#C7CDD3" />
 
-        <EditText
-            android:id="@+id/setting_newPassword"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="15dp"
-            android:ems="10"
-            android:hint="New Passsword"
-            android:inputType="textWebPassword"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#C7CDD3" />
+            android:layout_height="wrap_content"
+            app:passwordToggleDrawable="@drawable/password_eye"
+            app:passwordToggleEnabled="true">
 
-        <EditText
-            android:id="@+id/setting_newPassword2"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/setting_oldPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint=" Old Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColorHighlight="#0076FF"
+                tools:paddingBottom="20dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="Type new Password again"
-            android:inputType="textPassword"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="#C7CDD3" />
+            android:layout_height="wrap_content"
+            app:passwordToggleDrawable="@drawable/password_eye"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/setting_newPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint=" New Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColorHighlight="#0076FF"
+                tools:paddingBottom="20dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleDrawable="@drawable/password_eye"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/setting_newPassword2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint=" Type your new Password again"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColorHighlight="#0076FF"
+                tools:paddingBottom="20dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Space
             android:layout_width="match_parent"
