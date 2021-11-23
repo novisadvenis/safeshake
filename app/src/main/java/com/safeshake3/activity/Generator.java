@@ -114,6 +114,7 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
     @Override
     public void hearShake() {
         Toast.makeText(this, "Don't shake me, bro!", Toast.LENGTH_SHORT).show();
+        setPasswordField();
     }
 
     private class onCheckedListener implements CompoundButton.OnCheckedChangeListener {
