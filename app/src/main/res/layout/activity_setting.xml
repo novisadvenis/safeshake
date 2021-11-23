@@ -23,6 +23,9 @@
             android:textColor="#000000"
             android:textSize="24sp"
             tools:paddingBottom="10dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -42,7 +45,9 @@
                 android:textColorHighlight="#0076FF"
                 tools:paddingBottom="20dp" />
         </com.google.android.material.textfield.TextInputLayout>
-
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -60,7 +65,9 @@
                 android:textColorHighlight="#0076FF"
                 tools:paddingBottom="20dp" />
         </com.google.android.material.textfield.TextInputLayout>
-
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -81,7 +88,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="74dp" />
+            android:layout_height="40dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
