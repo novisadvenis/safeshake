@@ -30,7 +30,7 @@ public class Setting extends ParentActivity {
         EditText pass1 = (EditText) findViewById(R.id.setting_newPassword);
         EditText pass2 = (EditText) findViewById(R.id.setting_newPassword2);
 
-
+        //Cancel Button
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,14 +38,21 @@ public class Setting extends ParentActivity {
             }
         });
 
-
+        //Save Button
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* if (pass1.getText().equals(null)&  pass2.getText().equals(null)){
-                    Toast.makeText(Setting.this, "Password is empty", Toast.LENGTH_LONG).show();
 
-                }else*/
+                // Eingabe Leer Validierung
+                if (oldPassword.getText().toString().isEmpty()){
+                    Toast.makeText(Setting.this, "Old Passwort is empty", Toast.LENGTH_LONG).show();
+                }else if (pass1.getText().toString().isEmpty()){
+                    Toast.makeText(Setting.this, "New Password is empty", Toast.LENGTH_LONG).show();
+                }else if (pass2.getText().toString().isEmpty()){
+                    Toast.makeText(Setting.this, "Type password again is empty", Toast.LENGTH_LONG).show();
+                }else {
+
+                    // Passwort ändern
                 if (appPassword.getPassword().equals(oldPassword.getText().toString()) && pass2.getText().toString().equals(pass1.getText().toString())){
                     //todo update on apppassword changed
                     AppPassword tobeSaved = AppPassword.findById(AppPassword.class,appPassword.getId());
@@ -54,8 +61,10 @@ public class Setting extends ParentActivity {
                     Log.d("Password are Same","true");
                     goToVault();
                 } else {
-                Toast.makeText(Setting.this, "Password doesn't match", Toast.LENGTH_LONG).show();
-            }
+                    Toast.makeText(Setting.this, "Password doesn't match", Toast.LENGTH_LONG).show();
+
+                }
+                }
             }
 
         });

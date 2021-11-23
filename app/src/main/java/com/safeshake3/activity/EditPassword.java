@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.safeshake3.R;
 import com.safeshake3.model.Password;
@@ -41,6 +42,7 @@ public class EditPassword extends AppCompatActivity {
         username.setText(usernameValue);
         password.setText(passwordValue);
 
+        //Cancel Button
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +50,7 @@ public class EditPassword extends AppCompatActivity {
             }
         });
 
+        //Save Button
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,9 +61,20 @@ public class EditPassword extends AppCompatActivity {
                 editedPassword.setWebsite(website.getText().toString());
                 editedPassword.setUsername(username.getText().toString());
                 editedPassword.setPassword(password.getText().toString());
+
+                // Eingabe Leer Validierung
+                if (editedPassword.getWebsite().isEmpty()){
+                    Toast.makeText(EditPassword.this, "website is empty", Toast.LENGTH_LONG).show();
+                }else if (editedPassword.getUsername().isEmpty()){
+                    Toast.makeText(EditPassword.this, "username is empty", Toast.LENGTH_LONG).show();
+                }else if (editedPassword.getPassword().isEmpty()){
+                    Toast.makeText(EditPassword.this, "password is empty", Toast.LENGTH_LONG).show();
+                }else{
                 editedPassword.save();
 
                 goToVault();
+
+                }
             }
         });
 

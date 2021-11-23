@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.safeshake3.R;
 import com.safeshake3.model.Password;
@@ -26,7 +27,7 @@ public class AddPassword extends AppCompatActivity {
         username = (TextView) findViewById(R.id.addPassword_username_value);
         password = (TextView) findViewById(R.id.addPassword_password_value);
 
-
+        //Cancel Button
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,16 +35,30 @@ public class AddPassword extends AppCompatActivity {
             }
         });
 
+        //Save Button
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 String newWebsiteString = website.getText().toString();
                 String newUsernameString = username.getText().toString();
                 String newPasswordString = password.getText().toString();
-                Password newPassword = new Password(newWebsiteString,newUsernameString,newPasswordString);
-                Password.save(newPassword);
-                //todo input check
-                goToVault();
+
+                // Eingabe Leer Validierung
+                if (newWebsiteString.isEmpty()){
+                    Toast.makeText(AddPassword.this, "website is empty", Toast.LENGTH_LONG).show();
+                }else if (newUsernameString.isEmpty()){
+                    Toast.makeText(AddPassword.this, "username is empty", Toast.LENGTH_LONG).show();
+                }else if (newPasswordString.isEmpty()){
+                    Toast.makeText(AddPassword.this, "password is empty", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Password newPassword = new Password(newWebsiteString, newUsernameString, newPasswordString);
+                    Password.save(newPassword);
+                    //todo input check
+                    goToVault();
+                }
 
             }
         });
