@@ -72,14 +72,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="185dp"
-                android:backgroundTint="#0076ff "
+                android:backgroundTint="#0076FF"
                 android:text="Cancel" />
 
             <Button
                 android:id="@+id/settingAddBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#0076ff "
+                android:backgroundTint="#0076FF"
                 android:text="Save" />
         </LinearLayout>
     </LinearLayout>
