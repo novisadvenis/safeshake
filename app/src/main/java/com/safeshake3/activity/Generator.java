@@ -3,6 +3,7 @@ package com.safeshake3.activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
@@ -64,7 +65,7 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
                 ClipData pData = clipboard.getPrimaryClip();
                 ClipData.Item item = pData.getItemAt(0);
                 String txtpaste = item.getText().toString();
-                Log.d("PASTE",txtpaste);
+                Log.d("PASTE", txtpaste);
 
             }
         });
@@ -109,8 +110,6 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
     }
 
 
-
-
     @Override
     public void hearShake() {
         Toast.makeText(this, "Don't shake me, bro!", Toast.LENGTH_SHORT).show();
@@ -132,7 +131,20 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
         boolean lower = lowercaseSwitch.isChecked();
         boolean number = numberSwitch.isChecked();
         boolean special = specialSwitch.isChecked();
-        passwordField.setText(Password.generatePassword(length, upper, lower, number, special));
+        String password = Password.generatePassword(length, upper, lower, number, special);
+        passwordField.setText(password);
+        Intent intent = getIntent();
+        String fromClass = null;
+        if (intent != null && (fromClass = intent.getStringExtra("from")) != null) {
+            Log.d("FROM CLASS", fromClass);
+            if (fromClass.equals("AddPassword")) {
+                Log.d("FROM AddPassword CLASS", "true");
+                Intent intent1 = new Intent(Generator.this, AddPassword.class);
+                intent1.putExtra("password",password);
+                startActivity(intent1);
+            }
+
+        }
     }
 
 

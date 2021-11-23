@@ -14,18 +14,38 @@ import com.safeshake3.model.Password;
 
 public class AddPassword extends AppCompatActivity {
     Button cancelBtn,saveBtn;
-    TextView website,username,password;
+    TextView website,username,password,generateLink;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_password);
+        Intent intent = getIntent();
+        String passwordString = null;
+        if(intent != null && (passwordString = intent.getStringExtra("password")) != null) {
+            setContentView(R.layout.activity_add_password2);
+            password = (TextView) findViewById(R.id.addPassword_password_value);
+            password.setText(passwordString);
+        } else {
+            setContentView(R.layout.activity_add_password);
+            generateLink = (TextView) findViewById(R.id.addPassword_generate_link);
+
+            generateLink.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(AddPassword.this,Generator.class);
+                    intent.putExtra("from","AddPassword");
+                    startActivity(intent);
+                }
+            });
+        }
+
         cancelBtn = (Button) findViewById(R.id.addPassword_cancelBtn);
         saveBtn = (Button) findViewById(R.id.addPassword_saveBtn);
         website = (TextView) findViewById(R.id.addPassword_website_value);
         username = (TextView) findViewById(R.id.addPassword_username_value);
-        password = (TextView) findViewById(R.id.addPassword_password_value);
+
+
 
         //Cancel Button
         cancelBtn.setOnClickListener(new View.OnClickListener() {
