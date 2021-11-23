@@ -82,18 +82,12 @@
                     android:id="@+id/seekValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-<<<<<<< Updated upstream
-                    android:text="Value" />
-
-=======
                     android:text="10" />
->>>>>>> Stashed changes
             </LinearLayout>
 
             <SeekBar
                 android:id="@+id/seekBar"
                 android:layout_width="match_parent"
-<<<<<<< Updated upstream
                 android:layout_height="22dp"
                 android:backgroundTint="#0076FF"
                 android:foregroundTint="#0076FF"
@@ -106,9 +100,6 @@
                 android:thumbTint="#0076FF"
                 android:tickMarkTint="#0076FF"
                 tools:paddingBottom="15dp" />
-=======
-                android:layout_height="22dp" />
->>>>>>> Stashed changes
 
             <Switch
                 android:id="@+id/generator_number_switch"
@@ -116,6 +107,7 @@
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
                 android:text="Use numbers"
+                android:checked="true"
                 android:textAlignment="textStart" />
 
             <Switch
@@ -124,6 +116,7 @@
                 android:layout_height="61dp"
                 android:paddingLeft="10dp"
                 android:text="Use uppercase"
+                android:checked="true"
                 android:textAlignment="textStart"
                 android:textSize="14sp" />
 
@@ -133,6 +126,7 @@
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
                 android:text="Use lowercase"
+                android:checked="true"
                 android:textAlignment="textStart" />
 
             <Switch
@@ -140,6 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
+                android:checked="true"
                 android:text="Use special character"
                 android:textAlignment="textStart" />
 
