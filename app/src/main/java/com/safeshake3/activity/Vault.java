@@ -45,7 +45,7 @@ public class Vault extends ParentActivity {
         super.onCreate(savedInstanceState);
         searchView = (SearchView) findViewById(R.id.searchView);
         listView = (ListView) findViewById(R.id.lv1);
-        addPassword = (Button) findViewById(R.id.settingAddBtn);
+        addPassword = (Button) findViewById(R.id.vault_AddBtn);
 
         SugarContext.init(this);
         //Password.init();

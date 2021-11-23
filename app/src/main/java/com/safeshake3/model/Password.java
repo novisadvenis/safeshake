@@ -2,7 +2,15 @@ package com.safeshake3.model;
 
 import com.orm.SugarRecord;
 
+import org.passay.CharacterData;
+import org.passay.CharacterRule;
+import org.passay.EnglishCharacterData;
+import org.passay.PasswordGenerator;
+
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Password extends SugarRecord implements Serializable {
@@ -98,5 +106,48 @@ public class Password extends SugarRecord implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public static String generatePassword(int length, boolean upper, boolean lower,boolean number,boolean special) {
+
+        PasswordGenerator generator = new PasswordGenerator();
+        List<CharacterRule> rules = new ArrayList<>();
+        if(upper) {
+            CharacterData uppercaseChars = EnglishCharacterData.UpperCase;
+            CharacterRule upperCaseRule = new CharacterRule(uppercaseChars);
+            upperCaseRule.setNumberOfCharacters(2);
+            rules.add(upperCaseRule);
+        }
+
+        if(lower) {
+            CharacterData lowercaseChars = EnglishCharacterData.LowerCase;
+            CharacterRule lowercaseRule = new CharacterRule(lowercaseChars);
+            lowercaseRule.setNumberOfCharacters(2);
+            rules.add(lowercaseRule);
+        }
+
+        if(number) {
+            CharacterData numberChars = EnglishCharacterData.Digit;
+            CharacterRule numberRule = new CharacterRule(numberChars);
+            numberRule.setNumberOfCharacters(2);
+            rules.add(numberRule);
+        }
+
+        if(special) {
+            CharacterData specialChars = new CharacterData() {
+                public String getErrorCode() {
+                    return "Error Detected";
+                }
+
+                public String getCharacters() {
+                    return "!@#$%^&*()_+";
+                }
+            };
+            CharacterRule specialRule = new CharacterRule(specialChars);
+            rules.add(specialRule);
+            specialRule.setNumberOfCharacters(2);
+        }
+
+        return generator.generatePassword(length,rules);
     }
 }

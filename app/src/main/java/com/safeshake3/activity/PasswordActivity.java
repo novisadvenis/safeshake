@@ -37,6 +37,7 @@ public class PasswordActivity extends AppCompatActivity {
         website.setText(websiteValue);
         username.setText(usernameValue);
         password.setText(passwordValue);
+        password.setEnabled(false);
 
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override

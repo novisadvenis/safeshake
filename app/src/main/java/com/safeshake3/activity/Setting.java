@@ -26,7 +26,7 @@ public class Setting extends ParentActivity {
         EditText oldPassword = (EditText) findViewById(R.id.setting_oldPassword);
         AppPassword appPassword = AppPassword.findById(AppPassword.class, 1);
         Button cancelBtn = (Button) findViewById(R.id.setting_cancelBtn);
-        Button saveBtn = (Button) findViewById(R.id.settingAddBtn);
+        Button saveBtn = (Button) findViewById(R.id.vault_AddBtn);
         EditText pass1 = (EditText) findViewById(R.id.setting_newPassword);
         EditText pass2 = (EditText) findViewById(R.id.setting_newPassword2);
 
