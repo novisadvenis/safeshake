@@ -14,19 +14,8 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="103dp"
-            tools:srcCompat="@drawable/logoss_removebg_preview" />
-
-        <TextView
-            android:id="@+id/login_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:text="SafeShake"
-            android:textAlignment="center"
-            android:textColor="#0076FF"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_height="155dp"
+            app:srcCompat="@drawable/logoss_removebg_preview" />
 
         <Space
             android:layout_width="match_parent"

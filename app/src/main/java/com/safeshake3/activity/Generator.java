@@ -137,10 +137,13 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
         String fromClass = null;
         if (intent != null && (fromClass = intent.getStringExtra("from")) != null) {
             Log.d("FROM CLASS", fromClass);
+            Password password1 = (Password) intent.getSerializableExtra("fromObject");
             if (fromClass.equals("AddPassword")) {
                 Log.d("FROM AddPassword CLASS", "true");
                 Intent intent1 = new Intent(Generator.this, AddPassword.class);
-                intent1.putExtra("password",password);
+                password1.setPassword(password);
+                intent1.putExtra("Object",password1);
+                Log.d("Generator",password1.toString());
                 startActivity(intent1);
             }
 
