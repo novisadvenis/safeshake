@@ -84,8 +84,8 @@ public class EditPassword extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(EditPassword.this);
                 builder.setCancelable(true);
-                builder.setTitle("You want to delete this Password");
-                builder.setMessage("Please be sure....");
+                builder.setTitle("You want to delete this Password ?");
+                builder.setMessage("Please be sure, You cannot undo this Action");
                 builder.setPositiveButton("Confirm",
                         new DialogInterface.OnClickListener() {
                             @Override

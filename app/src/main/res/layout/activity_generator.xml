@@ -100,6 +100,8 @@
                 android:progressTint="#0076FF"
                 android:secondaryProgressTint="#0076FF"
                 android:thumbTint="#0076FF"
+                android:min="10"
+                android:max="100"
                 android:tickMarkTint="#0076FF"
                 tools:paddingBottom="15dp" />
 

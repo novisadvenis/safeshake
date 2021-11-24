@@ -14,35 +14,19 @@ import com.safeshake3.R;
 import com.safeshake3.model.Password;
 
 public class AddPassword extends AppCompatActivity {
-    Button cancelBtn,saveBtn;
-    TextView website,username,password,generateLink;
-
+    private Button cancelBtn,saveBtn;
+    private TextView website,username,password,generateLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         Password passwordObject = null;
-
-
-        if(intent != null && (passwordObject = (Password) intent.getSerializableExtra("Object")) != null) {
+        if(checkIntentAndExtraState(intent)) {
             setContentView(R.layout.activity_add_password2);
-            cancelBtn = (Button) findViewById(R.id.addPassword_cancelBtn);
-            saveBtn = (Button) findViewById(R.id.addPassword_saveBtn);
-            website = (TextView) findViewById(R.id.addPassword_website_value);
-            username = (TextView) findViewById(R.id.addPassword_username_value);
             password = (TextView) findViewById(R.id.addPassword_password_value);
-            Log.d("From INTENT GENERATOR", passwordObject.toString());
-            //website.setText(passwordObject.getWebsite());
-            website.setText(passwordObject.getWebsite());
-            username.setText(passwordObject.getUsername());
-            password.setText(passwordObject.getPassword());
         } else {
             setContentView(R.layout.activity_add_password);
-            cancelBtn = (Button) findViewById(R.id.addPassword_cancelBtn);
-            saveBtn = (Button) findViewById(R.id.addPassword_saveBtn);
-            website = (TextView) findViewById(R.id.addPassword_website_value);
-            username = (TextView) findViewById(R.id.addPassword_username_value);
             generateLink = (TextView) findViewById(R.id.addPassword_generate_link);
 
             generateLink.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +43,19 @@ public class AddPassword extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+        }
+
+        cancelBtn = (Button) findViewById(R.id.addPassword_cancelBtn);
+        saveBtn = (Button) findViewById(R.id.addPassword_saveBtn);
+        website = (TextView) findViewById(R.id.addPassword_website_value);
+        username = (TextView) findViewById(R.id.addPassword_username_value);
+
+        if(checkIntentAndExtraState(intent)) {
+            passwordObject = (Password) intent.getSerializableExtra("Object");
+            Log.d("From INTENT GENERATOR", passwordObject.toString());
+            website.setText(passwordObject.getWebsite());
+            username.setText(passwordObject.getUsername());
+            password.setText(passwordObject.getPassword());
         }
 
         //Cancel Button
@@ -100,4 +97,9 @@ public class AddPassword extends AppCompatActivity {
         Intent intent = new Intent(this, Vault.class);
         startActivity(intent);
     }
+
+    private boolean checkIntentAndExtraState(Intent intent) {
+        return intent != null &&  intent.getSerializableExtra("Object") != null;
+    }
+
 }

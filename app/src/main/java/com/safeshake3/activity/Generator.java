@@ -3,6 +3,7 @@ package com.safeshake3.activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 
 import com.safeshake3.R;
 import com.safeshake3.model.Password;
@@ -73,12 +75,10 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                seekBar.setMax(100);
-                seekBar.setMin(10);
 
                 Log.d("Seek bar value", seekBar.getProgress() + "");
                 seekBarValue.setText(seekBar.getProgress() + "");
-                setPasswordField();
+
             }
 
             @Override
@@ -88,7 +88,7 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                setPasswordField();
             }
         });
     }
@@ -112,7 +112,7 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
 
     @Override
     public void hearShake() {
-        Toast.makeText(this, "Don't shake me, bro!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Shaking registered!", Toast.LENGTH_SHORT).show();
         setPasswordField();
     }
 
@@ -120,7 +120,17 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            setPasswordField();
+            boolean upper = uppercaseSwitch.isChecked();
+            boolean lower = lowercaseSwitch.isChecked();
+            boolean number = numberSwitch.isChecked();
+            boolean special = specialSwitch.isChecked();
+            //wenn alle button aus sind
+            if (!(upper || lower || number || special)) {
+                buttonView.setChecked(true);
+                Toast.makeText(Generator.this, "You cannot disable all the Switch", Toast.LENGTH_SHORT).show();
+            } else {
+                setPasswordField();
+            }
         }
     }
 
@@ -136,19 +146,34 @@ public class Generator extends ParentActivity implements ShakeDetector.Listener 
         Intent intent = getIntent();
         String fromClass = null;
         if (intent != null && (fromClass = intent.getStringExtra("from")) != null) {
-            Log.d("FROM CLASS", fromClass);
             Password password1 = (Password) intent.getSerializableExtra("fromObject");
             if (fromClass.equals("AddPassword")) {
-                Log.d("FROM AddPassword CLASS", "true");
-                Intent intent1 = new Intent(Generator.this, AddPassword.class);
-                password1.setPassword(password);
-                intent1.putExtra("Object",password1);
-                Log.d("Generator",password1.toString());
-                startActivity(intent1);
-            }
+                Log.d("FROM CLASS", fromClass);
+                AlertDialog.Builder builder = new AlertDialog.Builder(Generator.this);
+                builder.setCancelable(true);
+                builder.setTitle("Are you happy with this Password ?");
+                builder.setMessage(password);
+                builder.setPositiveButton("Confirm",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Log.d("FROM AddPassword CLASS", "true");
+                                Intent intent1 = new Intent(Generator.this, AddPassword.class);
+                                password1.setPassword(password);
+                                intent1.putExtra("Object", password1);
+                                Log.d("Generator", password1.toString());
+                                startActivity(intent1);
+                            }
+                        });
+                builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
 
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
         }
     }
-
-
 }
